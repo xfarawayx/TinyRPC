@@ -1,0 +1,18 @@
+syntax = "proto3";
+option cc_generic_services = true;
+
+// 定义请求消息
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+// 定义响应消息
+message AddResponse {
+  int32 result = 1;
+}
+
+// 定义服务
+service CalculatorService {
+  rpc Add(AddRequest) returns (AddResponse);
+}
